@@ -1,0 +1,4 @@
+/* pages/index/index.wxss */
+.weui-btn:first-child {
+  margin-top: 15px;
+}

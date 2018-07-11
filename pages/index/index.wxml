@@ -1,0 +1,47 @@
+<!--pages/index/index.wxml-->
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">小程序调试工具</view>
+        <view class="page__desc">不要上传该代码，因为共用了顺风车的appId</view>
+    </view>
+    <view class="page__bd page__bd_spacing">
+        <button
+            class="weui-btn"
+            type="primary"
+            bindtap='bindWxLogin'>
+            登录
+        </button>
+        <button
+            class="weui-btn"
+            type="primary"
+            open-type='getUserInfo'
+            bindgetuserinfo="bindGetUserInfo">
+            获取用户信息
+        </button>
+
+        <form
+            report-submit="true"
+            bindsubmit="formSubmit">
+          <button
+              class="weui-btn"
+              type="default"
+              formType="submit">
+              表单ID
+          </button>
+        </form>
+
+        <button
+            class="weui-btn"
+            type="default"
+            disabled="true">
+            获取Token - 未开发
+        </button>
+
+        <button
+            class="weui-btn"
+            type="default"
+            disabled="true">
+            支付 - 未开发
+        </button>
+    </view>
+</view>

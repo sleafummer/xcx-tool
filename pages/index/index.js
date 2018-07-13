@@ -1,18 +1,18 @@
 // pages/index/index.js
 Page({
-  bindWxLogin: function (e) {
+  bindWxLogin: function(e) {
     wx.login({
-      success: function (res) {
+      success: function(res) {
         wx.showModal({
           title: '提示',
           content: '登录成功，请到控制台查看code',
         })
-        console.log(res)
+        console.log(res.data)
       }
-    })  
+    })
   },
 
-  bindGetUserInfo: function (e) {
+  bindGetUserInfo: function(e) {
     if (e.detail.userInfo) {
       wx.showModal({
         title: '提示',
@@ -27,11 +27,38 @@ Page({
     console.log(e)
   },
 
-  formSubmit: function (e) {
+  formSubmit: function(e) {
     wx.showModal({
       title: '提示',
       content: '成功获取formId，请到控制台查看',
     })
     console.log(e.detail.formId)
+  },
+
+  bindFetchToken: function(e) {
+    wx.login({
+      success: function(res) {
+        const code = res.code;
+        console.log(code);
+        wx.request({
+          header: {
+            'content-type': 'application/x-www-form-urlencoded'
+          },
+          url: 'http://api.27ng.com/platform/token/get',
+          method: 'POST',
+          dataType: 'json', // 默认值 如果设为json，会尝试对返回的数据做一次 JSON.parse
+          data: {
+            code: code
+          },
+          success: function (res) {
+            console.log(res.data);
+            wx.showModal({
+              title: '提示',
+              content: '成功获取token, 请查看控制台'
+            })
+          }
+        })
+      }
+    })
   }
 })

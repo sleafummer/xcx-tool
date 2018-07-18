@@ -22,6 +22,10 @@
       获取Token
     </button>
 
+    <button class="weui-btn" type="primary" bindtap="bindChooseLocation">
+      选择地址
+    </button>
+
     <button class="weui-btn" type="default" disabled="true">
       支付 - 未开发
     </button>

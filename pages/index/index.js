@@ -60,5 +60,17 @@ Page({
         })
       }
     })
+  },
+
+  bindChooseLocation: function(e) {
+    wx.chooseLocation({
+      success: function(res) {
+        wx.showModal({
+          title: '提示',
+          content: '地址选择成功，请查看控制台'
+        })
+        console.log(res);
+      }
+    })
   }
 })

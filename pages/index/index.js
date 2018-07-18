@@ -1,6 +1,11 @@
 // pages/index/index.js
 Page({
+  data: {
+    code: ''
+  },
+
   bindWxLogin: function(e) {
+    let that = this;
     wx.login({
       success: function(res) {
         wx.showModal({
@@ -8,6 +13,7 @@ Page({
           content: '登录成功，请到控制台查看code',
         })
         console.log(res)
+        that.setData({ code: res.code })
       }
     })
   },
@@ -50,7 +56,7 @@ Page({
           data: {
             code: code
           },
-          success: function (res) {
+          success: function(res) {
             console.log(res.data);
             wx.showModal({
               title: '提示',
@@ -72,5 +78,9 @@ Page({
         console.log(res);
       }
     })
+  },
+
+  getPhoneNumber: function(e) {
+    console.log(e);
   }
 })

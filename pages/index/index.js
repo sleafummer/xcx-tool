@@ -7,7 +7,7 @@ Page({
           title: '提示',
           content: '登录成功，请到控制台查看code',
         })
-        console.log(res.data)
+        console.log(res)
       }
     })
   },

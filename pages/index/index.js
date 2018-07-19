@@ -1,7 +1,8 @@
 // pages/index/index.js
 Page({
   data: {
-    code: ''
+    code: '',
+    region: ['广东省', '广州市', '海珠区'],
   },
 
   bindWxLogin: function(e) {
@@ -13,7 +14,9 @@ Page({
           content: '登录成功，请到控制台查看code',
         })
         console.log(res)
-        that.setData({ code: res.code })
+        that.setData({
+          code: res.code
+        })
       }
     })
   },
@@ -82,5 +85,12 @@ Page({
 
   getPhoneNumber: function(e) {
     console.log(e);
+  },
+
+  bindRegionChange: function(e) {
+    console.log('picker发送选择改变，携带值为', e)
+    this.setData({
+      region: e.detail.value
+    })
   }
 })

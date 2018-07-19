@@ -33,5 +33,11 @@
     <button class="weui-btn" type="default" disabled="true">
       支付 - 未开发
     </button>
+
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+      <view class="picker">
+        当前选择：{{region[0]}}，{{region[1]}}，{{region[2]}}
+      </view>
+    </picker>
   </view>
 </view>

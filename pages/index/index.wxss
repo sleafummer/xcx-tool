@@ -1,4 +1,8 @@
 /* pages/index/index.wxss */
-.weui-btn:first-child {
+.weui-btn:first-of-type {
   margin-top: 15px;
+}
+
+.weui-btn:last-of-type {
+  margin-bottom: 15px;
 }

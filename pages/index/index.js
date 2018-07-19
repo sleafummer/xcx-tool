@@ -2,7 +2,9 @@
 Page({
   data: {
     code: '',
-    region: ['广东省', '广州市', '海珠区'],
+    region: ['安徽省', '宣城市', '宁国市'],
+    areacode: ['340000', '3421800', '342881'],
+    postcode: '242300'
   },
 
   bindWxLogin: function(e) {
@@ -90,7 +92,9 @@ Page({
   bindRegionChange: function(e) {
     console.log('picker发送选择改变，携带值为', e)
     this.setData({
-      region: e.detail.value
+      region: e.detail.value,
+      areacode: e.detail.code,
+      postcode: e.detail.postcode
     })
   }
 })

@@ -36,7 +36,10 @@
 
     <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
       <view class="picker">
-        当前选择：{{region[0]}}，{{region[1]}}，{{region[2]}}
+        <view>当前选择：{{region[0]}}，{{region[1]}}，{{region[2]}}</view>
+        <view>下面的数据需要在真机上查看</view>
+        <view>区划代码分别是: {{areacode[0]}}， {{areacode[1]}}， {{areacode[2]}}</view>
+        <view>{{region[2]}}的邮政编码是：{{postcode}}</view>
       </view>
     </picker>
   </view>

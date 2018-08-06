@@ -30,8 +30,8 @@
       获取手机号 {{ code ? '' : '- 请先调登录' }}
     </button>
 
-    <button class="weui-btn" type="default" disabled="true">
-      支付 - 未开发
+    <button class="weui-btn" type="warn" bindtap="pay" disabled="{{!token}}">
+      支付 {{ token ? '' : '- 请先调获取Token' }}
     </button>
 
     <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
